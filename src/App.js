@@ -46,6 +46,9 @@ const App = () => {
   return (
     <>
       <h1>GEOCACHING</h1>
+
+      <div>MAP</div>
+
       <Add handleCreate={handleCreate}/>
       <div className='geo'>
         {geocache.map((cache) => {
