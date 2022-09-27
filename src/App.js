@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Add from './components/Add';
+import Edit from './components/Edit';
 
 const App = () => {
 
@@ -24,13 +25,24 @@ const App = () => {
     })
   }
 
+  const handleDelete = (event) => {
+    axios.delete('https://guarded-harbor-25892.herokuapp.com/api/caches/' + event.target.value)
+    .then((response) => {
+      getGeocache()
+    })
+  }
 
-   
-   useEffect(() => {
+  const handleUpdate = (editCache) => {
+    axios.put('https://guarded-harbor-25892.herokuapp.com/api/caches/' + editCache.id, editCache)
+    .then((response) => {
+      getGeocache()
+    })
+  }
+
+  useEffect(() => {
     getGeocache()
   }, [])
   
-
   return (
     <>
       <h1>GEOCACHING</h1>
@@ -43,13 +55,12 @@ const App = () => {
               <h4>Note: {cache.note}</h4>
               <h4>Latitude: {cache.lat}</h4>
               <h4>Longitude: {cache.long}</h4>
+              <Edit handleUpdate={handleUpdate} cache={cache}/>
+              <button onClick={handleDelete} value={cache.id}>DELETE</button>
             </div>
           )
         })}
       </div>
-
-
-
     </>
   )
 }
