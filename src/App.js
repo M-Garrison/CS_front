@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 import Add from './components/Add';
 import Edit from './components/Edit';
 
@@ -47,7 +48,13 @@ const App = () => {
     <>
       <h1>GEOCACHING</h1>
 
-      <div>MAP</div>
+      {/* <Map
+        google = {this.props.google}
+        style = {{width:"50%", height:"50%"}}
+        zoom = {10}
+        initialCenter = {{
+          lat: 28.704, lng: 77.102
+        }}/> */}
 
       <Add handleCreate={handleCreate}/>
       <div className='geo'>
