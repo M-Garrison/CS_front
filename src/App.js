@@ -4,13 +4,16 @@ import { Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 import Add from './components/Add';
 import Edit from './components/Edit';
 
+
+
 const App = () => {
+  const API = "https://guarded-harbor-25892.herokuapp.com/api/caches"
 
   const [geocache, setGeocache] = useState([])
 
   const getGeocache = () => {
     axios
-      .get('https://guarded-harbor-25892.herokuapp.com/api/caches')
+      .get(API)
       .then(
         (response) => setGeocache(response.data),
         (err) => console.error(err)
@@ -19,7 +22,7 @@ const App = () => {
   }
 
    const handleCreate = (addCache) => {
-    axios.post('https://guarded-harbor-25892.herokuapp.com/api/caches', addCache)
+    axios.post(API, addCache)
     .then((response) => {
       console.log(response)
       getGeocache()
@@ -27,14 +30,14 @@ const App = () => {
   }
 
   const handleDelete = (event) => {
-    axios.delete('https://guarded-harbor-25892.herokuapp.com/api/caches/' + event.target.value)
+    axios.delete(`${API}/` + event.target.value)
     .then((response) => {
       getGeocache()
     })
   }
 
   const handleUpdate = (editCache) => {
-    axios.put('https://guarded-harbor-25892.herokuapp.com/api/caches/' + editCache.id, editCache)
+    axios.put(`${API}/` + editCache.id, editCache)
     .then((response) => {
       getGeocache()
     })
