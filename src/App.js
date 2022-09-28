@@ -4,8 +4,6 @@ import { Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 import Add from './components/Add';
 import Edit from './components/Edit';
 
-
-
 const App = () => {
   const API = "https://guarded-harbor-25892.herokuapp.com/api/caches"
 
