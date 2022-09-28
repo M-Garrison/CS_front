@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 import Add from './components/Add';
 import Edit from './components/Edit';
 
