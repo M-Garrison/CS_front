@@ -15,7 +15,7 @@ const Edit = (props) => {
   return(
     <>
     <details>
-        <summary>EDIT GEOCACHE</summary>
+        <summary>EDIT</summary>
         <form onSubmit={handleSubmit}>
             <label htmlFor="name">Name: </label>
             <input type="text" name="name" value={cache.name} onChange={handleChange}/>

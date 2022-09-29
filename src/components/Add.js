@@ -16,6 +16,7 @@ const handleChange = (event) => {
 
     return(
         <>
+            <h3>ADD NEW GEOCACHE:</h3>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name: </label>
                 <input type="text" name="name" value={cache.name} onChange={handleChange}/>
