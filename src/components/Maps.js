@@ -1,12 +1,12 @@
 import React from 'react';
 import Edit from './Edit';
 import axios from 'axios';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScriptNext, MarkerF } from '@react-google-maps/api';
 
 const Maps = ({API, cache, getGeocache}) => {
     
     const mapStyles = {
-        height: "25vh",
+        height: "30vh",
         width: "100%"
       }
 
@@ -26,16 +26,20 @@ const Maps = ({API, cache, getGeocache}) => {
 
     return (
         <div className="map" key={cache.id}>
-            <LoadScript
-            googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+        <LoadScriptNext
+            googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+        >
             <GoogleMap
-            mapContainerStyle={mapStyles}
-            zoom={10}
-            // center={defaultCenter}
-            center= {{lat: Number(cache.lat), lng: Number(cache.long)}}>
-            <Marker position= {{lat: Number(cache.lat), lng: Number(cache.long)}}/>
+                mapContainerStyle={mapStyles}
+                zoom={18}
+                // center={defaultCenter}
+                center= {{lat: Number(cache.lat), lng: Number(cache.long)}}
+            >
+                <MarkerF 
+                    position= {{lat: Number(cache.lat), lng: Number(cache.  long)}}
+                />
             </GoogleMap>
-            </LoadScript>
+        </LoadScriptNext>
         <h4>Name: {cache.name}</h4>
         <h4>Note: {cache.note}</h4>
         <h4>Latitude: {cache.lat}</h4>
