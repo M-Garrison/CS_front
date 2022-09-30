@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const Add = (props) => {
+const Add = ({handleCreate}) => {
     let emptyCache = { name:'', note:'', lat:'', long:''}
     const [cache, setCache] = useState(emptyCache)
 
@@ -10,7 +10,7 @@ const handleChange = (event) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.handleCreate(cache)
+    handleCreate(cache)
     setCache(emptyCache)
   }
 

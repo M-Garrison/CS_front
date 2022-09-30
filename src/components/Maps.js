@@ -1,5 +1,5 @@
 import React from 'react';
-import Edit from './Edit';
+import Edit from './Edit.js';
 import axios from 'axios';
 import { GoogleMap, LoadScriptNext, MarkerF } from '@react-google-maps/api';
 
@@ -36,11 +36,11 @@ const Maps = ({API, cache, getGeocache}) => {
                 center= {{lat: Number(cache.lat), lng: Number(cache.long)}}
             >
                 <MarkerF 
-                    position= {{lat: Number(cache.lat), lng: Number(cache.  long)}}
+                    position= {{lat: Number(cache.lat), lng: Number(cache.long)}}
                 />
             </GoogleMap>
         </LoadScriptNext>
-        <h4>Name: {cache.name}</h4>
+        <h4 className="bg-blue-600 text-white">Name: {cache.name}</h4>
         <h4>Note: {cache.note}</h4>
         <h4>Latitude: {cache.lat}</h4>
         <h4>Longitude: {cache.long}</h4>

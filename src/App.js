@@ -33,7 +33,7 @@ const App = () => {
   
   return (
     <>
-      <h1>GEOCACHING</h1>
+      <h1 className="bg-blue-600 text-white">GEOCACHING</h1>
       <Add handleCreate={handleCreate}/>
       <h3>CURRENT GEOCACHES:</h3>
       <div className="geo">
