@@ -30,7 +30,7 @@ const handleChange = (event) => {
                 <label htmlFor="long">Longitude: </label>
                 <input type="number" name="long" value={cache.long} onChange={handleChange}/>
                 <br />
-                <input class="bg-blue-500 hover:bg-blue-600 text-white" type="SUBMIT"/>
+                <button className="bg-blue-500 hover:bg-blue-600 text-white" type="submit">SUBMIT</button>
             </form>
         </>
     )

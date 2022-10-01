@@ -32,7 +32,7 @@ const App = () => {
   }, [])
   
   return (
-    <>
+    <div className="bg-gradient-to-r from-green-900 via-green-400 to-green-900">
       <div className="text-center">
         <h1 className="bg-blue-500 text-xl text-white">GEOCACHING</h1>
         <Add handleCreate={handleCreate}/>
@@ -45,7 +45,7 @@ const App = () => {
           })}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
