@@ -32,11 +32,12 @@ const App = () => {
   }, [])
   
   return (
-    <div className="bg-gradient-to-r from-green-900 via-green-400 to-green-900">
-      <div className="text-center">
-        <h1 className="bg-blue-500 text-xl text-white">GEOCACHING</h1>
+    <div className="bg-gradient-to-r from-white via-white to-green-500">
+    {/* <div className="bg-gradient-to-r from-white to-green-500"> */}
+      <div className="flex flex-col text-left">
+        <h1 className="py-4 px-10">NEW GEOCACHE:</h1>
         <Add handleCreate={handleCreate}/>
-        <h3>FOUND GEOCACHES:</h3>
+        <h3 className="py-4 md:mx-auto px-10">FOUND GEOCACHES:</h3>
         <div className="flex flex-col-reverse gap-5">
           {geocache.map((cache) => {
             return (

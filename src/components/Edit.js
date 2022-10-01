@@ -14,8 +14,8 @@ const Edit = (props) => {
 
   return(
     <>
-      <details>
-        <summary className="bg-red-500 hover:bg-red-600 text-white">EDIT GEOCACHE</summary>
+      <details className="z">
+        <summary className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded">EDIT GEOCACHE</summary>
         <form className="text-left" onSubmit={handleSubmit}>
         <label className="text-sm" htmlFor="name">Name: </label>
         <input type="text" name="name" value={cache.name} onChange={handleChange}/>
@@ -29,7 +29,7 @@ const Edit = (props) => {
         <label className="text-sm" htmlFor="long">Longitude: </label>
         <input type="number" name="long" value={cache.long} onChange={handleChange}/>
         <br />
-        <button className="bg-red-500 hover:bg-red-600 text-white" type="submit">SUBMIT</button>
+        <button className="bg-blue-500 px-4 py-2 button hover:bg-blue-600 text-white rounded-lg" type="submit">SUBMIT</button>
         </form>
       </details>
     </>

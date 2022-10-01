@@ -26,7 +26,7 @@ const Maps = ({API, cache, getGeocache}) => {
 
     return (
       <div className="md:container md:mx-auto px-10">
-        <div className="map border-black border-4" key={cache.id}>
+        <div className="map border-black border-8 rounded-lg" key={cache.id}>
           <LoadScriptNext
             googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
             >
@@ -47,7 +47,7 @@ const Maps = ({API, cache, getGeocache}) => {
           <h4 className="bg-green-500 text-lg text-white">Longitude: {cache.long}</h4>
           <div className="flex row justify-between">
             <Edit handleUpdate={handleUpdate} cache={cache}/>
-            <button onClick={handleDelete} class="bg-red-500 hover:bg-red-600 text-white" value={cache.id}>DELETE</button>
+            <button onClick={handleDelete} class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded" value={cache.id}>DELETE</button>
           </div>
         </div>
       </div>
