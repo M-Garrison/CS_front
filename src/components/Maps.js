@@ -25,28 +25,32 @@ const Maps = ({API, cache, getGeocache}) => {
       }
 
     return (
-        <div className="map" key={cache.id}>
-        <LoadScriptNext
+      <div className="md:container md:mx-auto px-10">
+        <div className="map border-black border-4" key={cache.id}>
+          <LoadScriptNext
             googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-        >
-            <GoogleMap
-                mapContainerStyle={mapStyles}
-                zoom={18}
-                // center={defaultCenter}
-                center= {{lat: Number(cache.lat), lng: Number(cache.long)}}
             >
-                <MarkerF 
-                    position= {{lat: Number(cache.lat), lng: Number(cache.long)}}
-                />
+            <GoogleMap
+            mapContainerStyle={mapStyles}
+            zoom={18}
+            // center={defaultCenter}
+            center= {{lat: Number(cache.lat), lng: Number(cache.long)}}
+            >
+              <MarkerF 
+              position= {{lat: Number(cache.lat), lng: Number(cache.long)}}
+              />
             </GoogleMap>
-        </LoadScriptNext>
-        <h4 className="bg-blue-600 text-white">Name: {cache.name}</h4>
-        <h4>Note: {cache.note}</h4>
-        <h4>Latitude: {cache.lat}</h4>
-        <h4>Longitude: {cache.long}</h4>
-        <Edit handleUpdate={handleUpdate} cache={cache}/>
-        <button onClick={handleDelete} value={cache.id}>DELETE</button>
+          </LoadScriptNext>
+          <h4 className="bg-blue-500 text-lg text-white">Name: {cache.name}</h4>
+          <h4 className="bg-green-500 text-lg text-white">Note: {cache.note}</h4>
+          <h4 className="bg-blue-500 text-lg text-white">Latitude: {cache.lat}</h4>
+          <h4 className="bg-green-500 text-lg text-white">Longitude: {cache.long}</h4>
+          <div className="flex row justify-between">
+            <Edit handleUpdate={handleUpdate} cache={cache}/>
+            <button onClick={handleDelete} class="bg-red-500 hover:bg-red-600 text-white" value={cache.id}>DELETE</button>
+          </div>
         </div>
+      </div>
     );
 }
 

@@ -33,15 +33,17 @@ const App = () => {
   
   return (
     <>
-      <h1 className="bg-blue-600 text-white">GEOCACHING</h1>
-      <Add handleCreate={handleCreate}/>
-      <h3>CURRENT GEOCACHES:</h3>
-      <div className="geo">
-        {geocache.map((cache) => {
-          return (
-            <Maps API={API} cache={cache} getGeocache={getGeocache}/>
-          )
-        })}
+      <div className="text-center">
+        <h1 className="bg-blue-500 text-xl text-white">GEOCACHING</h1>
+        <Add handleCreate={handleCreate}/>
+        <h3>FOUND GEOCACHES:</h3>
+        <div className="flex flex-col-reverse gap-5">
+          {geocache.map((cache) => {
+            return (
+              <Maps API={API} cache={cache} getGeocache={getGeocache}/>
+            )
+          })}
+        </div>
       </div>
     </>
   )

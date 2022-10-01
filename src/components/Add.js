@@ -16,24 +16,21 @@ const handleChange = (event) => {
 
     return(
         <>
-            <h3>ADD NEW GEOCACHE:</h3>
+            <h3 className="bg-blue-500 text-xl text-white">ADD NEW GEOCACHE:</h3>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name: </label>
                 <input type="text" name="name" value={cache.name} onChange={handleChange}/>
                 <br />
-                <br />
                 <label htmlFor="note">Note: </label>
                 <input type="text" name="note" value={cache.note} onChange={handleChange}/>
-                <br />
                 <br />
                 <label htmlFor="lat">Latitude: </label>
                 <input type="number" name="lat" value={cache.lat} onChange={handleChange}/>
                 <br />
-                <br />
                 <label htmlFor="long">Longitude: </label>
                 <input type="number" name="long" value={cache.long} onChange={handleChange}/>
                 <br />
-                <input type="submit"/>
+                <input class="bg-blue-500 hover:bg-blue-600 text-white" type="SUBMIT"/>
             </form>
         </>
     )
