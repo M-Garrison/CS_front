@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Add from './components/Add.js';
 import Maps from'./components/Maps.js';
+import DropDown from './components/Dropdown.js';
 
 const App = () => {
 
@@ -33,11 +34,13 @@ const App = () => {
   
   return (
     <div className="bg-gradient-to-r from-white via-white to-green-500">
-    {/* <div className="bg-gradient-to-r from-white to-green-500"> */}
       <div className="flex flex-col text-left">
-        <h1 className="py-4 px-10">NEW GEOCACHE:</h1>
+        <DropDown/>
+        <br />
+        <br />
+        <h1 className="font-bold py-4 px-10">ADD NEW GEOCACHE:</h1>
         <Add handleCreate={handleCreate}/>
-        <h3 className="py-4 md:mx-auto px-10">FOUND GEOCACHES:</h3>
+        <h3 className="font-bold py-4 md:mx-auto px-10">FOUND GEOCACHES:</h3>
         <div className="flex flex-col-reverse gap-5">
           {geocache.map((cache) => {
             return (

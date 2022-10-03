@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 
+/* @import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap'); */
 
-
+.navbar{
+    position: fixed;
+    top:0;
+    right:0;
+    left:auto;
+    padding: 10px;
+    border-radius: 3px;
+}
 
 
 *{
